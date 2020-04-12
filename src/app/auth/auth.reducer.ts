@@ -15,8 +15,12 @@ export const authReducer = (state: AuthState = estadoInicial, action: fromAuth.a
 
         case fromAuth.SET_USER:
             return {
-                user: {...action.user}
-            }
+                user: { ...action.user }
+            };
+        case fromAuth.UNSET_USER:
+            return {
+                user: null
+            };
 
         default:
             return state;
