@@ -1,5 +1,6 @@
-<div class="row">
-    <div class="col-6">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
         <div class="card card-statistics">
           <div class="card-body">
 
@@ -21,7 +22,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-sm-6">
           <div class="card card-statistics">
             <div class="card-body">
   
@@ -43,55 +44,59 @@
           </div>
         </div>
 </div>
+</div>
 
-<div class="row m-5">
+<div class="container">
+  <div class="row">
   
-  <div class="col-12">
-      <div class="card card-statistics">
-        <div class="card-body">
-
-            <div class="clearfix">
-                <div class="float-left">
-                  <i class="fa fa-building text-info icon-lg"></i>
-                </div>
-                <div class="float-right">
-                  <p class="mb-0 text-right">Diferencia</p>
-                  <div class="fluid-container">
-                    <h3 [ngClass]="{
-                      'text-success': ingresos - egresos > 0,
-                      'text-danger': ingresos - egresos < 0
-                    }"
-                        class="font-weight-medium text-right mb-0">
-                      {{ ingresos - egresos | currency }}
-                    </h3>
+    <div class="col-sm-12">
+        <div class="card card-statistics">
+          <div class="card-body">
+  
+              <div class="clearfix">
+                  <div class="float-left">
+                    <i class="fa fa-building text-info icon-lg"></i>
+                  </div>
+                  <div class="float-right">
+                    <p class="mb-0 text-right">Diferencia</p>
+                    <div class="fluid-container">
+                      <h3 [ngClass]="{
+                        'text-success': ingresos - egresos > 0,
+                        'text-danger': ingresos - egresos < 0
+                      }"
+                          class="font-weight-medium text-right mb-0">
+                        {{ ingresos - egresos | currency }}
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-        
-        
-        </div>    
+          
+          
+          </div>    
+      </div>
     </div>
-  </div>
-
-  <div class="col-12 p-5" *ngIf="ingresos > 0 || egresos > 0">
-      <div class="card card-statistics">
-        <div class="card-body">
-          <h1 class="card-title">Gráfica</h1>
-
-          <div>
+  
+    <div class="col-sm-12" *ngIf="ingresos > 0 || egresos > 0">
+        <div class="card card-statistics">
+          <div class="card-body">
+            <h1 class="card-title">Gráfica</h1>
+  
             <div>
-              <div style="display: block">
-                <canvas baseChart
-                  [data]="doughnutChartData"
-                  [labels]="doughnutChartLabels"
-                  chartType="doughnut">
-                </canvas>
+              <div>
+                <div style="display: block">
+                  <canvas baseChart
+                    [colors]="chartColors"
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    chartType="doughnut">
+                  </canvas>
+                </div>
               </div>
             </div>
+            
           </div>
-          
         </div>
-      </div>
+    </div>
+  
   </div>
-
 </div>

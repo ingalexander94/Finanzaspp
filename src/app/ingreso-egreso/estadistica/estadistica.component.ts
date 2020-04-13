@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   styles: [
   ]
 })
-export class EstadisticaComponent implements OnInit, OnDestroy{
+export class EstadisticaComponent implements OnInit, OnDestroy {
 
   ingresos: number = 0;
   egresos: number = 0;
@@ -19,9 +19,10 @@ export class EstadisticaComponent implements OnInit, OnDestroy{
   cuantosEgresos: number = 0;
 
   public doughnutChartLabels: string[] = ['Ingresos', 'Egresos'];
-  public doughnutChartData: number[] = []; 
+  public doughnutChartData: number[] = [];
+  public chartColors: any[] = [{ backgroundColor: ["#28a745", "#dc3545"] }];
 
-  subscription:Subscription = new Subscription();
+  subscription: Subscription = new Subscription();
 
   constructor(private store: Store<AppState>) { }
 
@@ -33,12 +34,12 @@ export class EstadisticaComponent implements OnInit, OnDestroy{
         if (item.tipo === "Ingreso") {
           this.cuantosIngresos++;
           this.ingresos += item.monto;
-        }else if(item.tipo === "Egreso"){
+        } else if (item.tipo === "Egreso") {
           this.cuantosEgresos++;
           this.egresos += item.monto;
         }
       }
-      this.doughnutChartData = [this.ingresos,this.egresos];
+      this.doughnutChartData = [this.ingresos, this.egresos];
     });
   }
 

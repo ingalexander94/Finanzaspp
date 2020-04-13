@@ -1,0 +1,17 @@
+<div class="contenedor">
+    <a (click)="mostrar = !mostrar" class="botonF1 text-white text-center">
+      <span><i class="fas fa-plus"></i></span>
+    </a>
+    <a [ngClass]="{'animacionVer': mostrar}" routerLink="/detalle" class="botonFlotante botonF2 bg-dark text-white">
+      <span><i class="fas fa-list"></i></span>
+    </a>
+    <a [ngClass]="{'animacionVer': mostrar}" routerLink="/" class="botonFlotante botonF3 bg-warning text-white animacionVer">
+      <span><i class="fas fa-chart-pie"></i></span> 
+    </a>
+    <a [ngClass]="{'animacionVer': mostrar}" routerLink="/ingreso-egreso" class="botonFlotante botonF4 bg-primary text-white animacionVer">
+      <span><i class="fas fa-dollar-sign"></i></span>
+    </a>
+    <a [ngClass]="{'animacionVer': mostrar}" (click)="logout()" class="botonFlotante botonF5 bg-danger text-white animacionVer">
+      <span><i class="fas fa-power-off"></i></span>
+    </a>
+     </div>

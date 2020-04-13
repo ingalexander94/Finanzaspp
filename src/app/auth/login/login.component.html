@@ -12,7 +12,7 @@
                     <div class="input-group">
                       <input [(ngModel)]="correo" name="email" type="email"  class="form-control" placeholder="Email" required>
                       <div class="input-group-append">
-                        <span class="input-group-text">
+                        <span class="input-group-text" [ngClass]="{'text-success': correo !== ''}">
                           <i class="fa fa-check-circle"></i>
                         </span>
                       </div>
@@ -24,7 +24,7 @@
                     <div class="input-group">
                       <input ngModel name="password" [(ngModel)] ="clave" type="password" class="form-control" placeholder="*********" required>
                       <div class="input-group-append">
-                        <span class="input-group-text">
+                        <span class="input-group-text" [ngClass]="{'text-success': clave !== ''}">
                           <i class="fa fa-check-circle"></i>
                         </span>
                       </div>

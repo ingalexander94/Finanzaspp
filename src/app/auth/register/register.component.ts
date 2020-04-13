@@ -12,6 +12,10 @@ import { Subscription } from 'rxjs';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
 
+
+  correo: string = "";
+  clave: string = "";
+  nombre: string = "";
   cargando : boolean;
   subscription: Subscription = new Subscription();
 

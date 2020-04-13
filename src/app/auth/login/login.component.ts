@@ -12,8 +12,8 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  correo:string = "alexanderpenaloza3@gmail.com";
-  clave:string = "Realmadrid94";
+  correo:string = "";
+  clave:string = "";
   cargando:boolean;
   subscription: Subscription = new Subscription();
 

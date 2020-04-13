@@ -1,9 +1,15 @@
 
 <app-navbar></app-navbar>
 
-<div class="page-body-wrapper">
+<div class="container-fluid page-body-wrapper">
     
-    <app-sidebar></app-sidebar>
+    <div *ngIf="ancho>578">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div *ngIf="ancho<=578">
+        <app-flotante></app-flotante>
+    </div>
 
     <div class="main-panel">
 
